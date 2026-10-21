@@ -83,25 +83,50 @@
             </div>
           </div>
 
-          <div class="hero-art" aria-label="Ilustración de una familia bajo un arco">
-            <div class="art-sun"></div>
-            <div class="art-arch">
-              <div class="art-arch-inner"></div>
-              <div class="art-plant plant-left"><i></i><i></i><i></i><i></i></div>
-              <div class="art-plant plant-right"><i></i><i></i><i></i><i></i></div>
-              <div class="art-family">
-                <span class="person person-adult person-left"><i></i><b></b></span>
-                <span class="person person-child"><i></i><b></b></span>
-                <span class="person person-adult person-right"><i></i><b></b></span>
-                <span class="family-heart" aria-hidden="true">♥</span>
+          <div class="hero-gallery" role="region" aria-roledescription="carrusel" aria-label="Fotos del consultorio">
+            <div class="hero-gallery-viewport">
+              <figure class="gallery-slide is-active" data-carousel-slide aria-hidden="false">
+                <img
+                  src="img/foto-consultorio.jpg"
+                  alt="Consultorio pediátrico de Ruca, luminoso y preparado para atender a las infancias"
+                  width="1280"
+                  height="853"
+                  fetchpriority="high"
+                >
+                <figcaption class="gallery-caption">Un espacio pensado para cuidar</figcaption>
+              </figure>
+              <figure class="gallery-slide" data-carousel-slide aria-hidden="true">
+                <img
+                  src="img/foto-consultorio2.jpg"
+                  alt="Recepción y sala de espera del centro pediátrico Ruca"
+                  width="1280"
+                  height="853"
+                >
+                <figcaption class="gallery-caption">Te recibimos en Ruca</figcaption>
+              </figure>
+              <figure class="gallery-slide" data-carousel-slide aria-hidden="true">
+                <img
+                  src="img/foto-consultorio4.jpg"
+                  alt="Pasillo y consultorios de Ruca Pediátrico"
+                  width="1280"
+                  height="853"
+                >
+                <figcaption class="gallery-caption">Cada rincón, cerca de vos</figcaption>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button class="gallery-arrow" type="button" data-carousel-prev aria-label="Foto anterior">
+                <span aria-hidden="true">←</span>
+              </button>
+              <div class="gallery-dots" role="group" aria-label="Elegir foto">
+                <button type="button" data-carousel-to="0" aria-label="Mostrar foto 1" aria-current="true"></button>
+                <button type="button" data-carousel-to="1" aria-label="Mostrar foto 2" aria-current="false"></button>
+                <button type="button" data-carousel-to="2" aria-label="Mostrar foto 3" aria-current="false"></button>
               </div>
+              <button class="gallery-arrow" type="button" data-carousel-next aria-label="Foto siguiente">
+                <span aria-hidden="true">→</span>
+              </button>
             </div>
-            <div class="art-caption">
-              <span class="caption-flower" aria-hidden="true">✳</span>
-              <span>Crecer en compañía</span>
-            </div>
-            <span class="art-sparkle sparkle-one" aria-hidden="true">✳</span>
-            <span class="art-sparkle sparkle-two" aria-hidden="true">✦</span>
           </div>
         </div>
         <div class="hero-bottom container">
@@ -136,308 +161,171 @@
             <p>Conocé al equipo que cuida de las infancias y sus familias.</p>
           </div>
           <p class="professionals-note">
-            10 perfiles de ejemplo: los nombres, especialidades y descripciones son ficticios.
+            Conocé a quienes forman parte del equipo de Ruca.
           </p>
           <div class="professional-grid">
             <button
               class="professional-card"
               type="button"
-              data-professional="Ana López"
-              aria-label="Ver descripción de Ana López"
+              data-professional="Patricia Jannello"
+              aria-label="Ver descripción de Patricia Jannello"
               aria-pressed="false"
             >
               <span class="professional-card-inner">
                 <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder" aria-hidden="true">
-                    <span class="photo-placeholder-icon">✳</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
+                  <span class="professional-photo-placeholder">
+                    <img
+                      class="professional-photo"
+                      src="img/foto-patricia%20(1).jpg"
+                      alt=""
+                      width="1856"
+                      height="2784"
+                      loading="lazy"
+                    >
                   </span>
                   <span class="professional-details">
-                    <span class="professional-name">Ana López</span>
-                    <span class="professional-specialty">Pediatría</span>
+                    <span class="professional-name">Patricia Jannello</span>
+                    <span class="professional-specialty">Pediatra y alergista</span>
                     <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
                   </span>
                 </span>
                 <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Ana</span>
+                  <span class="professional-back-label">Sobre Patricia</span>
                   <span class="professional-description">
-                    Acompaña el crecimiento y el bienestar de niñas y niños desde una mirada cercana,
-                    respetuosa y atenta a cada familia.
+                    Pediatra y alergista. Una de las dos dueñas de Ruca.
                   </span>
                   <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
                 </span>
               </span>
             </button>
-
             <button
               class="professional-card"
               type="button"
-              data-professional="Mateo García"
-              aria-label="Ver descripción de Mateo García"
+              data-professional="Soledad Fernandez"
+              aria-label="Ver descripción de Soledad Fernandez"
               aria-pressed="false"
             >
               <span class="professional-card-inner">
                 <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder photo-placeholder-lilac" aria-hidden="true">
-                    <span class="photo-placeholder-icon">♡</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
+                  <span class="professional-photo-placeholder photo-placeholder-lilac">
+                    <img
+                      class="professional-photo"
+                      src="img/foto-soledad.jpg"
+                      alt=""
+                      width="1200"
+                      height="1600"
+                      loading="lazy"
+                    >
                   </span>
                   <span class="professional-details">
-                    <span class="professional-name">Mateo García</span>
-                    <span class="professional-specialty">Psicología infantil</span>
+                    <span class="professional-name">Soledad Fernandez</span>
+                    <span class="professional-specialty">Pediatra</span>
                     <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
                   </span>
                 </span>
                 <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Mateo</span>
+                  <span class="professional-back-label">Sobre Soledad</span>
                   <span class="professional-description">
-                    Brinda un espacio de escucha y acompañamiento para las infancias, con atención
-                    a sus emociones y a los vínculos familiares.
+                    Pediatra Neonatologa
                   </span>
                   <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
                 </span>
               </span>
             </button>
-
             <button
               class="professional-card"
               type="button"
-              data-professional="Sofía Fernández"
-              aria-label="Ver descripción de Sofía Fernández"
+              data-professional="Valeria Canale"
+              aria-label="Ver descripción de Valeria Canale"
               aria-pressed="false"
             >
               <span class="professional-card-inner">
                 <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder photo-placeholder-yellow" aria-hidden="true">
-                    <span class="photo-placeholder-icon">⌁</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
+                  <span class="professional-photo-placeholder photo-placeholder-yellow">
+                    <img
+                      class="professional-photo"
+                      src="img/foto-valeria.jpg"
+                      alt=""
+                      width="800"
+                      height="1200"
+                      loading="lazy"
+                    >
                   </span>
                   <span class="professional-details">
-                    <span class="professional-name">Sofía Fernández</span>
-                    <span class="professional-specialty">Fonoaudiología</span>
+                    <span class="professional-name">Valeria Canale</span>
+                    <span class="professional-specialty">Administración y secretaría</span>
                     <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
                   </span>
                 </span>
                 <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Sofía</span>
+                  <span class="professional-back-label">Sobre Valeria</span>
                   <span class="professional-description">
-                    Acompaña el desarrollo de la comunicación y el lenguaje, respetando los tiempos
-                    y las necesidades de cada niña y niño.
+                    Responsable administrativa y secretaria de Ruca.
                   </span>
                   <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
                 </span>
               </span>
             </button>
-
-            <button
-              class="professional-card"
-              type="button"
-              data-professional="Lucía Romero"
-              aria-label="Ver descripción de Lucía Romero"
-              aria-pressed="false"
+            <article
+              class="professional-card professional-card-placeholder"
+              aria-label="Próximamente se sumará otro perfil profesional"
             >
-              <span class="professional-card-inner">
-                <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder photo-placeholder-yellow" aria-hidden="true">
-                    <span class="photo-placeholder-icon">✳</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
-                  </span>
-                  <span class="professional-details">
-                    <span class="professional-name">Lucía Romero</span>
-                    <span class="professional-specialty">Nutrición infantil</span>
-                    <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
-                  </span>
+              <span class="professional-face professional-front">
+                <span class="professional-photo-placeholder" aria-hidden="true">
+                  <span class="photo-placeholder-icon">✳</span>
+                  <span class="photo-placeholder-label">Foto pendiente</span>
                 </span>
-                <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Lucía</span>
-                  <span class="professional-description">
-                    Promueve hábitos de alimentación saludables y acompaña a cada familia
-                    respetando sus necesidades y costumbres.
-                  </span>
-                  <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
+                <span class="professional-details">
+                  <span class="professional-name">Próximamente</span>
+                  <span class="professional-specialty">Nuevo perfil profesional</span>
                 </span>
               </span>
-            </button>
-
-            <button
-              class="professional-card"
-              type="button"
-              data-professional="Tomás Benítez"
-              aria-label="Ver descripción de Tomás Benítez"
-              aria-pressed="false"
+            </article>
+            <article
+              class="professional-card professional-card-placeholder"
+              aria-label="Próximamente se sumará otro perfil profesional"
             >
-              <span class="professional-card-inner">
-                <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder" aria-hidden="true">
-                    <span class="photo-placeholder-icon">♡</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
-                  </span>
-                  <span class="professional-details">
-                    <span class="professional-name">Tomás Benítez</span>
-                    <span class="professional-specialty">Kinesiología pediátrica</span>
-                    <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
-                  </span>
+              <span class="professional-face professional-front">
+                <span class="professional-photo-placeholder photo-placeholder-lilac" aria-hidden="true">
+                  <span class="photo-placeholder-icon">♡</span>
+                  <span class="photo-placeholder-label">Foto pendiente</span>
                 </span>
-                <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Tomás</span>
-                  <span class="professional-description">
-                    Acompaña el desarrollo motor infantil con propuestas de movimiento
-                    pensadas para cada etapa.
-                  </span>
-                  <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
+                <span class="professional-details">
+                  <span class="professional-name">Próximamente</span>
+                  <span class="professional-specialty">Nuevo perfil profesional</span>
                 </span>
               </span>
-            </button>
-
-            <button
-              class="professional-card"
-              type="button"
-              data-professional="Camila Díaz"
-              aria-label="Ver descripción de Camila Díaz"
-              aria-pressed="false"
+            </article>
+            <article
+              class="professional-card professional-card-placeholder"
+              aria-label="Próximamente se sumará otro perfil profesional"
             >
-              <span class="professional-card-inner">
-                <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder photo-placeholder-lilac" aria-hidden="true">
-                    <span class="photo-placeholder-icon">⌁</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
-                  </span>
-                  <span class="professional-details">
-                    <span class="professional-name">Camila Díaz</span>
-                    <span class="professional-specialty">Psicopedagogía</span>
-                    <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
-                  </span>
+              <span class="professional-face professional-front">
+                <span class="professional-photo-placeholder photo-placeholder-yellow" aria-hidden="true">
+                  <span class="photo-placeholder-icon">⌁</span>
+                  <span class="photo-placeholder-label">Foto pendiente</span>
                 </span>
-                <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Camila</span>
-                  <span class="professional-description">
-                    Acompaña los procesos de aprendizaje y colabora con las familias en
-                    el recorrido escolar de cada infancia.
-                  </span>
-                  <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
+                <span class="professional-details">
+                  <span class="professional-name">Próximamente</span>
+                  <span class="professional-specialty">Nuevo perfil profesional</span>
                 </span>
               </span>
-            </button>
-
-            <button
-              class="professional-card"
-              type="button"
-              data-professional="Julián Herrera"
-              aria-label="Ver descripción de Julián Herrera"
-              aria-pressed="false"
+            </article>
+            <article
+              class="professional-card professional-card-placeholder"
+              aria-label="Próximamente se sumará otro perfil profesional"
             >
-              <span class="professional-card-inner">
-                <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder photo-placeholder-yellow" aria-hidden="true">
-                    <span class="photo-placeholder-icon">✳</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
-                  </span>
-                  <span class="professional-details">
-                    <span class="professional-name">Julián Herrera</span>
-                    <span class="professional-specialty">Odontopediatría</span>
-                    <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
-                  </span>
+              <span class="professional-face professional-front">
+                <span class="professional-photo-placeholder" aria-hidden="true">
+                  <span class="photo-placeholder-icon">✳</span>
+                  <span class="photo-placeholder-label">Foto pendiente</span>
                 </span>
-                <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Julián</span>
-                  <span class="professional-description">
-                    Cuida la salud bucal desde los primeros años y ayuda a que cada visita
-                    al consultorio sea una experiencia amable.
-                  </span>
-                  <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
+                <span class="professional-details">
+                  <span class="professional-name">Próximamente</span>
+                  <span class="professional-specialty">Nuevo perfil profesional</span>
                 </span>
               </span>
-            </button>
-
-            <button
-              class="professional-card"
-              type="button"
-              data-professional="Valentina Torres"
-              aria-label="Ver descripción de Valentina Torres"
-              aria-pressed="false"
-            >
-              <span class="professional-card-inner">
-                <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder photo-placeholder-lilac" aria-hidden="true">
-                    <span class="photo-placeholder-icon">♡</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
-                  </span>
-                  <span class="professional-details">
-                    <span class="professional-name">Valentina Torres</span>
-                    <span class="professional-specialty">Terapia ocupacional</span>
-                    <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
-                  </span>
-                </span>
-                <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Valentina</span>
-                  <span class="professional-description">
-                    Favorece la autonomía y la participación cotidiana de niñas y niños,
-                    acompañando también a sus referentes.
-                  </span>
-                  <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
-                </span>
-              </span>
-            </button>
-
-            <button
-              class="professional-card"
-              type="button"
-              data-professional="Santiago Ramírez"
-              aria-label="Ver descripción de Santiago Ramírez"
-              aria-pressed="false"
-            >
-              <span class="professional-card-inner">
-                <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder" aria-hidden="true">
-                    <span class="photo-placeholder-icon">⌁</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
-                  </span>
-                  <span class="professional-details">
-                    <span class="professional-name">Santiago Ramírez</span>
-                    <span class="professional-specialty">Dermatología infantil</span>
-                    <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
-                  </span>
-                </span>
-                <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Santiago</span>
-                  <span class="professional-description">
-                    Orienta a las familias en el cuidado de la piel durante la infancia,
-                    atendiendo cada consulta con cercanía.
-                  </span>
-                  <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
-                </span>
-              </span>
-            </button>
-
-            <button
-              class="professional-card"
-              type="button"
-              data-professional="Micaela Acosta"
-              aria-label="Ver descripción de Micaela Acosta"
-              aria-pressed="false"
-            >
-              <span class="professional-card-inner">
-                <span class="professional-face professional-front" aria-hidden="false">
-                  <span class="professional-photo-placeholder photo-placeholder-lilac" aria-hidden="true">
-                    <span class="photo-placeholder-icon">♡</span>
-                    <span class="photo-placeholder-label">Foto pendiente</span>
-                  </span>
-                  <span class="professional-details">
-                    <span class="professional-name">Micaela Acosta</span>
-                    <span class="professional-specialty">Trabajo social</span>
-                    <span class="professional-flip-hint">Tocá para conocer más <span aria-hidden="true">↗</span></span>
-                  </span>
-                </span>
-                <span class="professional-face professional-back" aria-hidden="true">
-                  <span class="professional-back-label">Sobre Micaela</span>
-                  <span class="professional-description">
-                    Orienta a las familias y facilita el acceso a recursos y redes
-                    de acompañamiento para las infancias.
-                  </span>
-                  <span class="professional-flip-hint">Volver al perfil <span aria-hidden="true">↗</span></span>
-                </span>
-              </span>
-            </button>
+            </article>
           </div>
         </div>
       </section>

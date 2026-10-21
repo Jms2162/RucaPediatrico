@@ -282,220 +282,105 @@ h3 {
   font-size: 15px;
 }
 
-.hero-art {
-  position: relative;
-  display: grid;
-  min-height: 435px;
-  place-items: center;
+.hero-gallery {
+  width: 100%;
+  min-width: 0;
 }
 
-.art-sun {
-  position: absolute;
-  top: 13px;
-  right: 29px;
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  background: var(--brand-yellow);
-}
-
-.art-arch {
+.hero-gallery-viewport {
   position: relative;
-  width: min(100%, 390px);
-  height: 390px;
   overflow: hidden;
-  border-radius: 200px 200px 26px 26px;
-  background: #d9e1d5;
+  aspect-ratio: 1.32;
+  border-radius: 18px;
+  background: #e3e8df;
+  box-shadow: 0 18px 46px rgb(35 45 37 / 12%);
 }
 
-.art-arch-inner {
+.gallery-slide {
   position: absolute;
-  top: 42px;
-  left: 50%;
-  width: 78%;
-  height: 94%;
-  transform: translateX(-50%);
-  border-radius: 200px 200px 0 0;
-  background: #eadfd0;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 450ms ease;
 }
 
-.art-family {
+.gallery-slide.is-active {
+  opacity: 1;
+}
+
+.gallery-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-caption {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  display: flex;
-  height: 225px;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 3px;
-}
-
-.person {
-  position: relative;
-  display: block;
-  width: 100px;
-  height: 189px;
-}
-
-.person i {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 50%;
-  width: 60px;
-  height: 67px;
-  transform: translateX(-50%);
-  border-radius: 48% 48% 45% 45%;
-  background: #9f6348;
-}
-
-.person b {
-  position: absolute;
-  bottom: -22px;
-  left: 50%;
-  width: 105px;
-  height: 145px;
-  transform: translateX(-50%);
-  border-radius: 46% 46% 0 0;
-  background: #bd8067;
-}
-
-.person-left i {
-  background: #59483c;
-}
-
-.person-left b {
-  width: 113px;
-  background: #718b75;
-}
-
-.person-right i {
-  background: #74503e;
-}
-
-.person-right b {
-  background: #9e9caf;
-}
-
-.person-child {
-  z-index: 2;
-  width: 82px;
-  height: 146px;
-}
-
-.person-child i {
-  top: 3px;
-  width: 50px;
-  height: 54px;
-  background: #bd8067;
-}
-
-.person-child b {
-  bottom: -20px;
-  width: 90px;
-  height: 105px;
-  background: #d3a35f;
-}
-
-.family-heart {
-  position: absolute;
-  z-index: 3;
-  top: 32px;
-  left: 50%;
-  color: #f6eee1;
-  font-size: 20px;
-}
-
-.art-plant {
-  position: absolute;
-  z-index: 2;
-  bottom: 22px;
-  width: 62px;
-  height: 115px;
-  border-bottom: 7px solid #aa8065;
-}
-
-.plant-left {
-  left: 20px;
-}
-
-.plant-right {
-  right: 20px;
-  transform: scaleX(-1);
-}
-
-.art-plant i {
-  position: absolute;
-  bottom: 10px;
-  left: 28px;
-  width: 24px;
-  height: 48px;
-  transform: rotate(-35deg);
-  transform-origin: bottom;
-  border-radius: 100% 0 100% 0;
-  background: #779077;
-}
-
-.art-plant i:nth-child(2) {
-  bottom: 30px;
-  left: 6px;
-  transform: rotate(-64deg) scale(.82);
-  background: #8a9d7c;
-}
-
-.art-plant i:nth-child(3) {
-  bottom: 52px;
-  left: 31px;
-  transform: rotate(-20deg) scale(.76);
-}
-
-.art-plant i:nth-child(4) {
-  bottom: 68px;
-  left: 10px;
-  transform: rotate(-65deg) scale(.62);
-  background: #8a9d7c;
-}
-
-.art-caption {
-  position: absolute;
-  right: -4px;
-  bottom: 44px;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 13px 17px;
-  border: 1px solid #eeebe3;
-  border-radius: 999px;
-  background: var(--paper);
-  box-shadow: 0 10px 30px rgb(40 50 42 / 7%);
-  color: #59685e;
-  font-size: 11px;
+  padding: 42px 22px 18px;
+  background: linear-gradient(transparent, rgb(20 35 29 / 68%));
+  color: white;
+  font-size: 13px;
   font-weight: 600;
 }
 
-.caption-flower {
-  color: #bc8266;
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 4px 0;
 }
 
-.art-sparkle {
-  position: absolute;
+.gallery-arrow {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #d8ddd5;
+  border-radius: 50%;
+  background: transparent;
   color: var(--green);
+  cursor: pointer;
+  font: inherit;
+  font-size: 18px;
+  transition: background 180ms ease, color 180ms ease;
 }
 
-.sparkle-one {
-  top: 115px;
-  left: 7px;
-  font-size: 24px;
+.gallery-arrow:hover {
+  background: var(--green);
+  color: white;
 }
 
-.sparkle-two {
-  right: 7px;
-  bottom: 120px;
-  color: #be8d62;
-  font-size: 20px;
+.gallery-arrow:focus-visible,
+.gallery-dots button:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
 }
 
+.gallery-dots {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.gallery-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #cbd3cc;
+  cursor: pointer;
+  transition: width 180ms ease, background 180ms ease;
+}
+
+.gallery-dots button[aria-current="true"] {
+  width: 24px;
+  background: var(--green);
+}
 .hero-bottom {
   position: absolute;
   right: 0;
@@ -680,12 +565,42 @@ h3 {
   display: flex;
   min-height: 165px;
   flex: 0 0 165px;
+  overflow: hidden;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   gap: 9px;
   background: #d9e1d5;
   color: var(--green-deep);
+}
+
+.professional-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 27%;
+}
+
+.professional-card-placeholder {
+  cursor: default;
+  perspective: none;
+}
+
+.professional-card-placeholder .professional-details {
+  justify-content: center;
+  text-align: center;
+}
+
+.professional-card-placeholder .professional-name {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.professional-card-placeholder .professional-specialty {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .photo-placeholder-lilac {
@@ -1172,22 +1087,8 @@ h3 {
     letter-spacing: -4px;
   }
 
-  .hero-art {
-    min-height: 365px;
-  }
-
-  .art-arch {
-    height: 330px;
-  }
-
-  .art-family {
-    transform: scale(.86);
-    transform-origin: bottom center;
-  }
-
-  .art-caption {
-    right: -10px;
-    bottom: 27px;
+  .hero-gallery-viewport {
+    aspect-ratio: 1.2;
   }
 
   .intro-grid {
@@ -1328,31 +1229,18 @@ h3 {
     margin-top: 25px;
   }
 
-  .hero-art {
-    min-height: 355px;
+  .hero-gallery {
     margin-top: 4px;
   }
 
-  .art-arch {
-    width: min(84%, 330px);
-    height: 320px;
+  .hero-gallery-viewport {
+    aspect-ratio: 1.08;
+    border-radius: 14px;
   }
 
-  .art-sun {
-    top: -1px;
-    right: 8%;
-    width: 67px;
-    height: 67px;
-  }
-
-  .art-caption {
-    right: 0;
-    bottom: 21px;
-  }
-
-  .sparkle-one {
-    top: 80px;
-    left: 3px;
+  .gallery-caption {
+    padding: 34px 16px 14px;
+    font-size: 12px;
   }
 
   .hero-bottom {
