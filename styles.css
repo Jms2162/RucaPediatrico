@@ -135,6 +135,26 @@ a {
   font-size: 16px;
 }
 
+.button-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  margin-inline: -7px;
+}
+
+.button-icon:not(.maps-icon) {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.maps-icon {
+  width: 19px;
+  height: 19px;
+}
+
 .menu-toggle {
   display: none;
 }
@@ -280,6 +300,15 @@ h3 {
   background: #ece4d5;
   color: #a27454;
   font-size: 15px;
+}
+
+.note-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.7;
 }
 
 .hero-gallery {
@@ -995,6 +1024,12 @@ h3 {
   font-size: 23px;
 }
 
+.closing-flower svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
 .closing-inner > p {
   margin-bottom: 13px;
   color: #778078;
@@ -1381,7 +1416,7 @@ h3 {
   }
 
   .professional-card {
-    min-height: 320px;
+    min-height: 250px;
   }
 
   .professional-photo-placeholder {
