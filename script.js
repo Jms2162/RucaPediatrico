@@ -2,7 +2,6 @@ const menuToggle = document.querySelector(".menu-toggle");
 const siteNavigation = document.querySelector(".site-nav");
 const logo = document.querySelector(".brand-logo");
 const currentYear = document.querySelector("[data-current-year]");
-const professionalCards = document.querySelectorAll(".professional-card");
 const gallery = document.querySelector(".hero-gallery");
 
 if (logo) {
@@ -130,24 +129,3 @@ if (gallery) {
 
   startAutoAdvance();
 }
-
-professionalCards.forEach((card) => {
-  const front = card.querySelector(".professional-front");
-  const back = card.querySelector(".professional-back");
-  const name = card.dataset.professional;
-
-  if (!front || !back || !name) {
-    return;
-  }
-
-  card.addEventListener("click", () => {
-    const isFlipped = card.classList.toggle("is-flipped");
-    card.setAttribute("aria-pressed", String(isFlipped));
-    card.setAttribute(
-      "aria-label",
-      `${isFlipped ? "Ver perfil de" : "Ver descripción de"} ${name}`,
-    );
-    front.setAttribute("aria-hidden", String(isFlipped));
-    back.setAttribute("aria-hidden", String(!isFlipped));
-  });
-});

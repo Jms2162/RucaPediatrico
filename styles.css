@@ -290,7 +290,7 @@ h3 {
 .hero-gallery-viewport {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1.32;
+  aspect-ratio: 1;
   border-radius: 18px;
   background: #e3e8df;
   box-shadow: 0 18px 46px rgb(35 45 37 / 12%);
@@ -317,6 +317,7 @@ h3 {
 
 .gallery-caption {
   position: absolute;
+  z-index: 2;
   right: 0;
   bottom: 0;
   left: 0;
@@ -513,57 +514,22 @@ h3 {
 }
 
 .professional-card {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 340px;
-  padding: 0;
-  border: 0;
-  border-radius: 12px;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  perspective: 1200px;
-  text-align: left;
-}
-
-.professional-card:focus-visible {
-  outline: 3px solid var(--green);
-  outline-offset: 4px;
-}
-
-.professional-card-inner {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  transform-style: preserve-3d;
-  transition: transform 600ms cubic-bezier(.2, .7, .2, 1);
-}
-
-.professional-card.is-flipped .professional-card-inner {
-  transform: rotateY(180deg);
-}
-
-.professional-face {
-  position: absolute;
-  inset: 0;
   display: flex;
-  overflow: hidden;
   flex-direction: column;
+  width: 100%;
+  min-height: 340px;
+  overflow: hidden;
   border: 1px solid #e1e2d9;
-  border-radius: inherit;
-  backface-visibility: hidden;
-}
-
-.professional-front {
+  border-radius: 12px;
   background: var(--paper);
+  box-shadow: 0 5px 20px rgb(35 45 37 / 4%);
+  color: inherit;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .professional-photo-placeholder {
   display: flex;
-  min-height: 165px;
+  height: 165px;
   flex: 0 0 165px;
   overflow: hidden;
   align-items: center;
@@ -580,27 +546,7 @@ h3 {
   height: 100%;
   object-fit: cover;
   object-position: center 27%;
-}
-
-.professional-card-placeholder {
-  cursor: default;
-  perspective: none;
-}
-
-.professional-card-placeholder .professional-details {
-  justify-content: center;
-  text-align: center;
-}
-
-.professional-card-placeholder .professional-name {
-  color: var(--muted);
-  font-size: 17px;
-}
-
-.professional-card-placeholder .professional-specialty {
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.5;
+  transition: transform 250ms ease;
 }
 
 .photo-placeholder-lilac {
@@ -631,59 +577,104 @@ h3 {
 }
 
 .professional-name {
+  margin: 0;
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.7px;
+  line-height: 1.2;
 }
 
 .professional-specialty {
-  margin-top: 5px;
+  margin: 7px 0 0;
   color: var(--green);
   font-size: 13px;
   font-weight: 600;
 }
 
-.professional-flip-hint {
+@media (hover: hover) {
+  .professional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgb(35 45 37 / 12%);
+  }
+
+  .professional-card:hover .professional-photo {
+    transform: scale(1.04);
+  }
+}
+
+.service-info {
+  padding-block: 34px;
+  background: #eeeee6;
+}
+
+.service-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.service-info-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 17px;
-  color: #68736b;
-  font-size: 11px;
-  font-weight: 600;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 28px;
+  border: 1px solid #e1e2d9;
+  border-radius: 12px;
+  background: var(--paper);
 }
 
-.professional-flip-hint span {
-  font-size: 16px;
+.service-info-card-highlight {
+  background: #e4dfe9;
 }
 
-.professional-back {
-  justify-content: center;
-  padding: 28px;
-  transform: rotateY(180deg);
-  background: var(--green-deep);
-  color: white;
+.service-info-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #e4eadd;
+  color: var(--green);
+  font-size: 22px;
 }
 
-.professional-back-label {
-  margin-bottom: 15px;
-  color: #d8e6dc;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
+.service-info-card-highlight .service-info-icon {
+  background: rgb(255 255 255 / 70%);
+  color: var(--brand-lilac);
 }
 
-.professional-description {
+.service-info-card h2 {
+  margin: 0 0 9px;
   font-family: var(--font-display);
   font-size: 17px;
-  line-height: 1.65;
+  font-weight: 700;
 }
 
-.professional-back .professional-flip-hint {
-  color: #d8e6dc;
+.service-info-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.service-info-card .service-info-detail {
+  margin-top: 4px;
+  color: var(--green-deep);
+  font-weight: 700;
+}
+
+.service-info-card .service-info-promo {
+  margin: 0;
+  color: var(--green-deep);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.service-info-promo-secondary {
+  margin-top: 12px;
 }
 
 .parent-guide {
@@ -824,6 +815,37 @@ h3 {
 
 .guide-content p {
   margin: 16px 0 0;
+}
+
+.guide-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.guide-resource-links a {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid #cbd4cb;
+  border-radius: 999px;
+  color: var(--green-deep);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.guide-resource-links a:hover {
+  border-color: var(--green);
+  background: #edf2ed;
+}
+
+.guide-resource-links a:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
 }
 
 .location {
@@ -1072,6 +1094,14 @@ h3 {
     padding-block: 88px;
   }
 
+  .site-nav {
+    gap: 20px;
+  }
+
+  .service-info-card {
+    padding: 22px;
+  }
+
   .hero {
     min-height: 610px;
     padding-top: 65px;
@@ -1088,7 +1118,7 @@ h3 {
   }
 
   .hero-gallery-viewport {
-    aspect-ratio: 1.2;
+    aspect-ratio: 1;
   }
 
   .intro-grid {
@@ -1234,7 +1264,7 @@ h3 {
   }
 
   .hero-gallery-viewport {
-    aspect-ratio: 1.08;
+    aspect-ratio: 1;
     border-radius: 14px;
   }
 
@@ -1257,6 +1287,19 @@ h3 {
   .location-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .service-info {
+    padding-block: 24px;
+  }
+
+  .service-info-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .service-info-card {
+    padding: 20px;
   }
 
   .intro h2,
@@ -1338,11 +1381,11 @@ h3 {
   }
 
   .professional-card {
-    height: 320px;
+    min-height: 320px;
   }
 
   .professional-photo-placeholder {
-    min-height: 145px;
+    height: 145px;
     flex-basis: 145px;
   }
 
@@ -1358,19 +1401,6 @@ h3 {
   .professional-specialty {
     font-size: 11px;
     line-height: 1.4;
-  }
-
-  .professional-flip-hint {
-    font-size: 10px;
-  }
-
-  .professional-back {
-    padding: 18px;
-  }
-
-  .professional-description {
-    font-size: 14px;
-    line-height: 1.5;
   }
 
   .location-grid {
