@@ -101,19 +101,31 @@ a {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: clamp(13px, 1.3vw, 18px);
+  gap: 4px;
   color: #4d5d54;
   font-size: 12px;
   font-weight: 600;
 }
 
 .site-nav > a:not(.nav-cta) {
+  padding: 9px 10px;
+  border-radius: 999px;
   white-space: nowrap;
+  transition: color 160ms ease, background-color 160ms ease;
 }
 
 .site-nav > a:not(.nav-cta):hover,
 .text-link:hover {
   color: var(--green);
+}
+
+.site-nav > a:not(.nav-cta):hover {
+  background: rgb(40 127 117 / 8%);
+}
+
+.site-nav > a:not(.nav-cta):focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
 }
 
 .site-nav .nav-cta {
@@ -123,15 +135,16 @@ a {
   gap: 8px;
   margin-left: 4px;
   padding-inline: 14px;
-  border: 1px solid #cbd4cb;
+  border: 1px solid var(--green);
   border-radius: 999px;
-  color: var(--green);
+  background: var(--green);
+  color: white;
   transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
 .nav-cta:hover {
-  border-color: var(--green);
-  background: var(--green);
+  border-color: var(--green-deep);
+  background: var(--green-deep);
   color: white;
 }
 
@@ -1307,6 +1320,15 @@ h3 {
   .site-nav > a:not(.nav-cta) {
     padding: 15px 0;
     border-bottom: 1px solid var(--line);
+    border-radius: 0;
+  }
+
+  .site-nav > a:not(.nav-cta)::before {
+    display: none;
+  }
+
+  .site-nav > a:not(.nav-cta):hover {
+    background: rgb(40 127 117 / 5%);
   }
 
   .site-nav .nav-cta {
@@ -1387,6 +1409,15 @@ h3 {
   .site-nav > a:not(.nav-cta) {
     padding: 15px 0;
     border-bottom: 1px solid var(--line);
+    border-radius: 0;
+  }
+
+  .site-nav > a:not(.nav-cta)::before {
+    display: none;
+  }
+
+  .site-nav > a:not(.nav-cta):hover {
+    background: rgb(40 127 117 / 5%);
   }
 
   .site-nav .nav-cta {
