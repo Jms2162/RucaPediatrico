@@ -917,6 +917,10 @@ h3 {
   margin: 16px 0 0;
 }
 
+.guide-consultation-cta {
+  margin-top: 16px;
+}
+
 .guide-resource-links {
   display: flex;
   flex-wrap: wrap;
